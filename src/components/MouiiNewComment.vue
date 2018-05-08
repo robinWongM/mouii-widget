@@ -352,11 +352,11 @@ export default {
   transition: .25s;
   transform: scale(1);
 }
-.mouii-new-comment__status-enter-active > .,
+/* .mouii-new-comment__status-enter-active > .,
  .mouii-new-comment__status-leave-active {
   transition: .25s;
   transform: scale(1);
-}
+} */
 .mouii-new-comment__status-enter, .mouii-new-comment__status-leave-to {
   transform: scale(0);
 }
