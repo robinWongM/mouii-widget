@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- '8'
+before_script: npm install
+script: npm run test
+before_install:
+- openssl aes-256-cbc -K $encrypted_e663b06ab257_key -iv $encrypted_e663b06ab257_iv
+  -in id_rsa.enc -out ~/.ssh/id_rsa -d
+  - chmod 600 ~/.ssh/id_rsa
+  - echo -e "Host mouii.rwong.cc\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+after_success:
+- ssh robinwong@mouii.rwong.cc 'cd ~/mouii-widget && git pull'
